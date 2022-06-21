@@ -1,0 +1,5 @@
+FROM public.ecr.aws/lambda/java:11
+
+COPY app/build/libs/app-all.jar ${LAMBDA_TASK_ROOT}/lib/
+
+CMD [ "com.afwolfe.lambdatest.MyHandler::handleRequest" ]
